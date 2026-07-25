@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Document</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <style>
+            *{
+            margin:0px;
+            padding:0px;
+            list-style:none;
+            font-family: sans-serif;
+            }
+            h1{
+                text-align:center;
+                padding: 50px 0px;
+            }
+            .faqMid{
+                max-width: 1000px;
+                margin: auto;
+            }
+            .faqItems{
+                border: 1px solid #ccc;
+                margin-bottom: 20px;
+            }
+            .faqItems h2{
+                background-color: aqua;
+                padding:10px;
+                position: relative;
+            }
+            .ans{
+                padding:10px;
+                display:none;
+            }
+            .showAnswer{
+                display: block;
+                transition: 0.5s;
+            }
+            .faqItems h2 span{
+                position: absolute;
+                right: 10px;  
+            }
+        </style>
+    </head>
+    <body>
+        <h1>FAQS About Liecenser Taxi Service</h1>
+
+        <div class="faqMid">
+            <div class="faqItems">
+                <h2>1.What is your standard shipping time and delivery fee? <span>+</span></h2>
+                <div class="ans">
+                     Standard shipping within India takes 3-5 business days, 
+                     with delivery fees starting at ₹49.
+                      Orders over ₹999 qualify for free standard shipping.
+                      Expedited next-day delivery
+                      is available at checkout for an additional fee.
+                </div>
+            </div>
+            <div class="faqItems">
+                <h2>2.What is your return and refund policy? <span>+</span></h2>
+                <div class="ans">
+                    2. You can return any unused item within 7 days of delivery for a full refund. 
+                    Once we receive and inspect the returned item, the refund is typically processed and 
+                    credited to your original payment method within 5-7 business days.
+                </div>
+            </div>
+            <div class="faqItems">
+                <h2>3.Do you offer corporate or bulk discounts? <span>+</span> </h2>
+                <div class="ans">
+                    3.Yes, we offer volume pricing and custom packages for teams and bulk orders of 10+ items. 
+                    You can request a specialized quote by reaching out to our corporate sales team.
+                </div>
+            </div>
+            <div class="faqItems">
+                <h2>4.How do i book taxi with GI Express Taxi? <span>+</span></h2>
+                <div class="ans">
+                    4.You can book a taxi online through our easy-to-use booking or call us directly
+                    we ensure quick and hassle-free bookings for all customers.
+                </div>
+            </div>
+    </body>
+    <script>
+        let allQuestionList = document.querySelectorAll(".faqItems h2")
+        
+        allQuestionList.forEach((question,index)=>{
+            question.addEventListener("click",()=>{
+
+                allQuestionList.forEach((q,i)=>{
+                    if(i!=index){
+                        q.lastElementChild.innerHTML="+"
+                        q.nextElementSibling.classList.remove("showAnswer");
+                      }
+                })
+
+                if(question.lastElementChild.innerHTML=="+"){
+                    question.lastElementChild.innerHTML="-"
+                }
+                else{
+                    question.lastElementChild.innerHTML="+"
+                }
+                question.nextElementSibling.classList.toggle("showAnswer")
+            })
+        })
+    </script>
+</html>
