@@ -124,9 +124,9 @@
             showalltodo()
         }
         let delrecord = (currentindex) => {
-            todolist.splice(currentindex, 1); // Remove the selected task
-            localStorage.setItem("TODO", JSON.stringify(todolist)); // Update Local Storage
-            showalltodo(); // Refresh the UI
+            todolist.splice(currentindex, 1); 
+            localStorage.setItem("TODO", JSON.stringify(todolist)); 
+            showalltodo(); 
         }
 
     </script>
